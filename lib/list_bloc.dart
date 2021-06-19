@@ -64,10 +64,9 @@ class ListBloc extends Bloc<ListEvent, ListState> {
         } on Exception catch (_) {
           if (state.list.length > 0) {
             yield ListSuccess(
-              list: state.list,
-              isEndOfList: false,
-              pageNumber: state.pageNumber,
-            );
+                list: state.list,
+                isEndOfList: false,
+                pageNumber: state.pageNumber);
             return;
           }
           yield ListFailure('server error');
